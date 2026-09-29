@@ -4,27 +4,29 @@
 
 A feature-rich todo application with AI-assisted task decomposition, focus mode, voice input, priority quadrant classification, tags, recurring tasks, and dark mode.
 
+🔗 **Live Demo → [https://warm-treacle-cf201e.netlify.app](https://warm-treacle-cf201e.netlify.app)**
+
 ---
 
 ## Screenshots
 
 ### Light Mode — Dashboard
-![Dashboard Light Mode](screenshots/ss1.png)
+![Dashboard Light Mode](cwh-todo-list/screenshots/ss1.png)
 
 ### Task with AI Blueprint
-![Task Blueprint](screenshots/ss2.png)
+![Task Blueprint](cwh-todo-list/screenshots/ss2.png)
 
 ### Blueprint Detail & Tags
-![Blueprint Detail](screenshots/ss3.png)
+![Blueprint Detail](cwh-todo-list/screenshots/ss3.png)
 
 ### Subtasks & Brain-Dump
-![Subtasks and Brain Dump](screenshots/ss4.png)
+![Subtasks and Brain Dump](cwh-todo-list/screenshots/ss4.png)
 
 ### Undo Delete Toast
-![Undo Delete](screenshots/ss5.png)
+![Undo Delete](cwh-todo-list/screenshots/ss5.png)
 
 ### Dark Mode
-![Dark Mode](screenshots/ss6.png)
+![Dark Mode](cwh-todo-list/screenshots/ss6.png)
 
 ---
 
