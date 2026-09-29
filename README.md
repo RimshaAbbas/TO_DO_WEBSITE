@@ -8,28 +8,6 @@ A feature-rich todo application with AI-assisted task decomposition, focus mode,
 
 ---
 
-## Screenshots
-
-### Light Mode — Dashboard
-![Dashboard Light Mode](cwh-todo-list/screenshots/ss1.png)
-
-### Task with AI Blueprint
-![Task Blueprint](cwh-todo-list/screenshots/ss2.png)
-
-### Blueprint Detail & Tags
-![Blueprint Detail](cwh-todo-list/screenshots/ss3.png)
-
-### Subtasks & Brain-Dump
-![Subtasks and Brain Dump](cwh-todo-list/screenshots/ss4.png)
-
-### Undo Delete Toast
-![Undo Delete](cwh-todo-list/screenshots/ss5.png)
-
-### Dark Mode
-![Dark Mode](cwh-todo-list/screenshots/ss6.png)
-
----
-
 ## Features
 
 | Feature | Description |
