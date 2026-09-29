@@ -1,47 +1,264 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* ============================================================
+   CSS VARIABLES — Light (default) & Dark
+   ============================================================ */
 :root {
   --bg-gradient-start: #e0f2fe;
   --bg-gradient-mid: #ffffff;
   --bg-gradient-end: #fce7f3;
   --text-color: #0f172a;
-  --card-bg: rgba(255,255,255,0.92);
-  --glass-card-border: rgba(255,255,255,0.7);
+  --text-muted-color: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --glass-card-border: rgba(255, 255, 255, 0.7);
+  --task-card-bg: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(240,249,255,0.95));
+  --task-card-border: rgba(15, 23, 42, 0.06);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --input-border: rgba(15, 23, 42, 0.12);
+  --input-color: #0f172a;
+  --select-bg: rgba(255, 255, 255, 0.9);
+  --activity-pill-bg: rgba(255, 255, 255, 0.88);
+  --activity-pill-border: #ec4899;
+  --filter-bar-bg: rgba(255, 255, 255, 0.55);
+  --filter-bar-border: rgba(15, 23, 42, 0.07);
+  --badge-tag-bg: rgba(15, 23, 42, 0.05);
+  --badge-tag-border: rgba(15, 23, 42, 0.12);
+  --badge-tab-border: rgba(15, 23, 42, 0.12);
+  --completed-toggle-bg: rgba(255, 255, 255, 0.5);
+  --edit-form-bg: rgba(236, 72, 153, 0.03);
+  --edit-form-border: rgba(236, 72, 153, 0.15);
+  --focus-modal-bg: rgba(15, 23, 42, 0.55);
+  --toast-bg: rgba(255, 255, 255, 0.95);
+  --toast-border: rgba(236, 72, 153, 0.9);
+  --toast-text: #0f172a;
   --btn-pink-start: #ec4899;
   --btn-pink-end: #d946ef;
   --btn-ai-start: #06b6d4;
   --btn-ai-end: #3b82f6;
   --accent-1: #06b6d4;
   --accent-2: #ec4899;
-  --toast-border: rgba(236,72,153,0.9);
+  --heading-color: #0f172a;
+  --subtext-color: #475569;
+  --blueprint-bg: rgba(255, 255, 255, 0.85);
+  --subtask-bg: rgba(241, 245, 249, 0.9);
+  --subtask-border: rgba(15, 23, 42, 0.06);
+  --terminal-bg: #0f172a;
   color-scheme: light;
 }
 
 .dark-theme {
-  --bg-gradient-start: #0f172a;
-  --bg-gradient-mid: #071029;
-  --bg-gradient-end: #0b1220;
-  --text-color: #e6eef8;
-  --card-bg: rgba(8,12,20,0.72);
-  --glass-card-border: rgba(255,255,255,0.04);
+  --bg-gradient-start: #0a0f1e;
+  --bg-gradient-mid: #060d1b;
+  --bg-gradient-end: #0d0a1a;
+  --text-color: #e2e8f0;
+  --text-muted-color: #94a3b8;
+  --card-bg: rgba(15, 22, 40, 0.85);
+  --glass-card-border: rgba(255, 255, 255, 0.06);
+  --task-card-bg: linear-gradient(135deg, rgba(20,30,55,0.95), rgba(15,25,48,0.92));
+  --task-card-border: rgba(255, 255, 255, 0.06);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.12);
+  --input-color: #e2e8f0;
+  --select-bg: #111827;
+  --activity-pill-bg: rgba(255, 255, 255, 0.04);
+  --activity-pill-border: #f472b6;
+  --filter-bar-bg: rgba(255, 255, 255, 0.03);
+  --filter-bar-border: rgba(255, 255, 255, 0.08);
+  --badge-tag-bg: rgba(255, 255, 255, 0.06);
+  --badge-tag-border: rgba(255, 255, 255, 0.12);
+  --badge-tab-border: rgba(255, 255, 255, 0.12);
+  --completed-toggle-bg: rgba(255, 255, 255, 0.04);
+  --edit-form-bg: rgba(244, 114, 182, 0.05);
+  --edit-form-border: rgba(244, 114, 182, 0.2);
+  --focus-modal-bg: rgba(0, 0, 0, 0.75);
+  --toast-bg: rgba(15, 22, 40, 0.96);
+  --toast-border: rgba(96, 165, 250, 0.7);
+  --toast-text: #e2e8f0;
   --btn-pink-start: #f472b6;
   --btn-pink-end: #c084fc;
   --btn-ai-start: #0891b2;
   --btn-ai-end: #60a5fa;
   --accent-1: #60a5fa;
   --accent-2: #f472b6;
-  --toast-border: rgba(96,165,250,0.7);
+  --heading-color: #f1f5f9;
+  --subtext-color: #94a3b8;
+  --blueprint-bg: rgba(255, 255, 255, 0.03);
+  --subtask-bg: rgba(255, 255, 255, 0.03);
+  --subtask-border: rgba(255, 255, 255, 0.07);
+  --terminal-bg: #020617;
   color-scheme: dark;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ============================================================
+   BASE
+   ============================================================ */
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   min-height: 100vh;
   font-family: Inter, 'Segoe UI', Roboto, sans-serif;
   background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+  background-attachment: fixed;
   color: var(--text-color);
+}
+
+/* ============================================================
+   BOOTSTRAP TEXT / HEADING OVERRIDES FOR DARK
+   ============================================================ */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6,
+.dark-theme .text-dark {
+  color: var(--heading-color) !important;
+}
+
+.dark-theme .text-muted {
+  color: var(--subtext-color) !important;
+}
+
+.dark-theme .text-secondary {
+  color: #94a3b8 !important;
+}
+
+/* ============================================================
+   BOOTSTRAP FORM CONTROLS DARK OVERRIDE
+   ============================================================ */
+.dark-theme .form-control,
+.dark-theme .form-select {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--input-color) !important;
+}
+
+.dark-theme .form-control::placeholder {
+  color: #475569 !important;
+}
+
+.dark-theme .form-control:focus,
+.dark-theme .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--accent-2) !important;
+  color: var(--input-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(244, 114, 182, 0.15) !important;
+}
+
+.dark-theme .form-select option {
+  background-color: #111827;
+  color: #e2e8f0;
+}
+
+.dark-theme .form-check-input {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-theme .form-check-input:checked {
+  background-color: var(--btn-pink-start);
+  border-color: var(--btn-pink-start);
+}
+
+.dark-theme .form-label {
+  color: var(--text-color) !important;
+}
+
+/* ============================================================
+   BOOTSTRAP BADGE OVERRIDES FOR DARK
+   ============================================================ */
+.dark-theme .text-bg-light {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  color: #cbd5e1 !important;
+}
+
+.dark-theme .badge.text-bg-light {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme .text-bg-info-subtle {
+  background-color: rgba(6, 182, 212, 0.12) !important;
+  color: #67e8f9 !important;
+}
+
+.dark-theme .text-bg-warning-subtle {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  color: #fbbf24 !important;
+}
+
+.dark-theme .text-bg-success-subtle {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  color: #6ee7b7 !important;
+}
+
+.dark-theme .text-bg-secondary-subtle {
+  background-color: rgba(100, 116, 139, 0.15) !important;
+  color: #94a3b8 !important;
+}
+
+.dark-theme .text-bg-primary-subtle {
+  background-color: rgba(96, 165, 250, 0.12) !important;
+  color: #93c5fd !important;
+}
+
+.dark-theme .border-info-subtle { border-color: rgba(6, 182, 212, 0.25) !important; }
+.dark-theme .border-warning-subtle { border-color: rgba(245, 158, 11, 0.25) !important; }
+.dark-theme .border-success-subtle { border-color: rgba(16, 185, 129, 0.25) !important; }
+.dark-theme .border-secondary-subtle { border-color: rgba(100, 116, 139, 0.25) !important; }
+.dark-theme .border-light { border-color: rgba(255, 255, 255, 0.06) !important; }
+
+/* ============================================================
+   BOOTSTRAP BUTTON DARK OVERRIDES
+   ============================================================ */
+.dark-theme .btn-outline-secondary {
+  color: #94a3b8;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.dark-theme .btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark-theme .btn-outline-dark {
+  color: #cbd5e1;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.dark-theme .btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+}
+
+.dark-theme .btn-outline-danger {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.4);
+}
+.dark-theme .btn-outline-danger:hover {
+  background-color: rgba(248, 113, 113, 0.12);
+  color: #fca5a5;
+}
+
+.dark-theme .btn-outline-primary {
+  color: #93c5fd;
+  border-color: rgba(96, 165, 250, 0.4);
+}
+.dark-theme .btn-outline-primary:hover {
+  background-color: rgba(96, 165, 250, 0.12);
+  color: #bfdbfe;
+}
+
+.dark-theme .btn-link {
+  color: var(--accent-1) !important;
+}
+
+.dark-theme .btn-close {
+  filter: invert(1);
+}
+
+/* ============================================================
+   BOOTSTRAP PROGRESS DARK
+   ============================================================ */
+.dark-theme .progress {
+  background-color: rgba(255, 255, 255, 0.06);
 }
